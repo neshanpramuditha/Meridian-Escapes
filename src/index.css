@@ -1,96 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Sri Lanka Inspired Palette */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 222.2 47.4% 11.2%;
+    /* Ocean Depths - Primary */
+    --primary: 222 47% 11%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Tea Emerald - Secondary */
+    --secondary: 160 84% 39%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Sunset Gold - Accent */
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 11%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 38 92% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom Sri Lanka Colors */
+    --ocean-deep: 222 47% 11%;
+    --ocean-mid: 217 33% 17%;
+    --ocean-light: 215 25% 27%;
+    
+    --sunset-gold: 38 92% 50%;
+    --sunset-amber: 43 96% 56%;
+    --sunset-cream: 48 96% 70%;
+    
+    --tea-emerald: 160 84% 39%;
+    --tea-mint: 158 64% 52%;
+    
+    --cinnamon-dark: 27 91% 31%;
+    --cinnamon-warm: 33 91% 44%;
+    
+    --silk-white: 210 40% 98%;
+    --silk-cream: 214 32% 91%;
+
+    /* Gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(222 47% 11%) 0%, hsl(217 33% 17%) 50%, hsl(215 25% 27%) 100%);
+    --gradient-sunset: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(43 96% 56%) 50%, hsl(48 96% 70%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(222 47% 11%) 0%, hsl(217 33% 17%) 40%, hsl(200 60% 25%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    
+    /* Shadows */
+    --shadow-elegant: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+    --shadow-card: 0 10px 40px -10px rgba(15, 23, 42, 0.15);
+    --shadow-glow: 0 0 60px rgba(245, 158, 11, 0.3);
+    --shadow-gold: 0 10px 40px -10px rgba(245, 158, 11, 0.4);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 222 47% 11%;
     --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
+    --card: 217 33% 17%;
     --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
+    --popover: 217 33% 17%;
     --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --primary: 38 92% 50%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 160 84% 39%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 43 96% 56%;
+    --accent-foreground: 222 47% 11%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --border: 215 25% 27%;
+    --input: 215 25% 27%;
+    --ring: 38 92% 50%;
   }
 }
 
@@ -99,7 +106,120 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-manrope antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-cinzel font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl;
+  }
+
+  .glass-dark {
+    @apply bg-ocean-deep/80 backdrop-blur-xl border border-white/10 rounded-2xl;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-sunset-gold via-sunset-amber to-sunset-cream bg-clip-text text-transparent;
+  }
+
+  .text-gradient-ocean {
+    @apply bg-gradient-to-r from-ocean-light via-tea-emerald to-tea-mint bg-clip-text text-transparent;
+  }
+
+  .btn-gold {
+    @apply bg-gradient-to-r from-sunset-gold to-sunset-amber text-ocean-deep font-semibold 
+           px-8 py-4 rounded-full transition-all duration-300 
+           hover:shadow-gold hover:scale-105 active:scale-95;
+  }
+
+  .btn-outline-gold {
+    @apply border-2 border-sunset-gold text-sunset-gold font-semibold 
+           px-8 py-4 rounded-full transition-all duration-300 
+           hover:bg-sunset-gold hover:text-ocean-deep hover:scale-105 active:scale-95;
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 ease-out 
+           hover:shadow-elegant hover:-translate-y-2;
+  }
+
+  .section-padding {
+    @apply px-6 md:px-12 lg:px-24 py-16 md:py-24;
+  }
+
+  .heading-xl {
+    @apply text-4xl md:text-6xl lg:text-7xl font-cinzel font-bold leading-tight;
+  }
+
+  .heading-lg {
+    @apply text-3xl md:text-4xl lg:text-5xl font-cinzel font-semibold;
+  }
+
+  .heading-md {
+    @apply text-2xl md:text-3xl font-cinzel font-medium;
+  }
+
+  .body-lg {
+    @apply text-lg md:text-xl font-manrope font-light leading-relaxed;
+  }
+
+  .price-tag {
+    @apply font-mono text-sunset-gold font-medium tracking-wide;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 6s ease-in-out infinite 2s;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin 60s linear infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
   }
 }
