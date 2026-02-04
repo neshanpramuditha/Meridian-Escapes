@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
 import { contactInfo } from '@/lib/data/tours';
+import { ThemeToggle } from './ThemeToggle';
 
 const navLinks = [
   { name: 'Home', href: '#' },
@@ -64,8 +65,9 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* CTA + Mobile Toggle */}
+          {/* CTA + Theme Toggle + Mobile Toggle */}
           <div className="flex items-center gap-4">
+            <ThemeToggle />
             <a
               href={`tel:${contactInfo.phone}`}
               className="hidden md:flex items-center gap-2 rounded-full border border-sunset-gold/30 bg-sunset-gold/10 px-4 py-2 text-sm font-manrope text-sunset-gold transition-all hover:bg-sunset-gold hover:text-ocean-deep"
