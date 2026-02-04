@@ -1,4 +1,4 @@
-# Welcome to my Lovable project
+# Welcome to my New Project for Meridian Escapes
 
 ## Project info
 
