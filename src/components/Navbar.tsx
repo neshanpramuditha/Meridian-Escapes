@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
 import { contactInfo } from '@/lib/data/tours';
 import { ThemeToggle } from './ThemeToggle';
+import logo from '@/assets/logo.png';
 
 const navLinks = [
   { name: 'Home', href: '#' },
@@ -38,10 +39,8 @@ export function Navbar() {
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <div className="h-10 w-10 rounded-full bg-gradient-to-br from-sunset-gold to-sunset-amber flex items-center justify-center">
-              <span className="font-cinzel text-lg font-bold text-ocean-deep">M</span>
-            </div>
+          <a href="#" className="flex items-center gap-3">
+            <img src={logo} alt="Meridian Escapes Logo" className="h-12 w-12 object-contain" />
             <div className="flex flex-col">
               <span className="font-cinzel text-lg font-semibold text-silk-white leading-none">
                 Meridian
