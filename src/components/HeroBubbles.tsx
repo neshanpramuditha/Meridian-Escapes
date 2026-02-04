@@ -56,36 +56,6 @@ function Bubble({ bubble }: { bubble: typeof bubbles[0] }) {
   );
 }
 
-function SunbeamRays() {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {[...Array(8)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute top-0 left-1/2 h-full origin-top"
-          style={{
-            width: '2px',
-            background: `linear-gradient(to bottom, 
-              rgba(245, 158, 11, 0.4) 0%, 
-              rgba(251, 191, 36, 0.2) 30%, 
-              transparent 70%)`,
-            transform: `rotate(${i * 45}deg) translateX(-50%)`,
-          }}
-          animate={{
-            opacity: [0.3, 0.6, 0.3],
-            scaleY: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 4,
-            delay: i * 0.5,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-      ))}
-    </div>
-  );
-}
 
 export function HeroBubbles() {
   return (
@@ -99,9 +69,6 @@ export function HeroBubbles() {
       {/* Overlay gradients */}
       <div className="absolute inset-0 bg-gradient-to-b from-ocean-deep/60 via-ocean-deep/40 to-ocean-deep/80" />
       <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep via-transparent to-transparent" />
-      
-      {/* Sunbeam rays effect */}
-      <SunbeamRays />
       
       {/* Floating bubbles */}
       <div className="absolute inset-0">
